@@ -16,7 +16,9 @@ export default function template(title, initialState = {}, content = "", meta_da
                 <meta charset="utf-8">
                 <title> ${title} </title>
                 <link rel="stylesheet" href="assets/style.css">
+                <meta name="og:title" content="${title}">
                 <meta name="description" content="${meta_data?.description}">
+                <meta name="og:description" content="${meta_data?.description}">
                 <meta name="keywords" content="${meta_data?.keywords}">
                 <meta name="author" content="John Doe">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
