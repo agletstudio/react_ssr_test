@@ -1,5 +1,5 @@
 // html skeleton provider
-export default function template(title, initialState = {}, content = "") {
+export default function template(title, initialState = {}, content = "", meta_data = {}) {
   let scripts = ''; // Dynamically ship scripts based on render type
   if (content) {
     scripts = ` <script>
@@ -16,8 +16,8 @@ export default function template(title, initialState = {}, content = "") {
                 <meta charset="utf-8">
                 <title> ${title} </title>
                 <link rel="stylesheet" href="assets/style.css">
-                <meta name="description" content="Free Web tutorials">
-                <meta name="keywords" content="HTML, CSS, JavaScript">
+                <meta name="description" content="${meta_data?.description}">
+                <meta name="keywords" content="${meta_data?.keywords}">
                 <meta name="author" content="John Doe">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
               </head>

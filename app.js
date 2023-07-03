@@ -22,8 +22,12 @@ let initialState = {
 
 // server rendered home page
 app.get('/', (req, res) => {
-  const { preloadedState, content}  = ssr(initialState)
-  const response = template("Melon Mobile Page", preloadedState, content)
+  const { preloadedState, content}  = ssr(initialState);
+  const meta_data = {
+    "description": "This is some meta description being added to the page.",
+    "keywords": "Melon, Mobile, SIM"
+  }
+  const response = template("Melon Mobile Page", preloadedState, content, meta_data)
   res.setHeader('Cache-Control', 'assets, max-age=604800')
   res.send(response);
 });
